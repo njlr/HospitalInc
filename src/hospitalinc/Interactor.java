@@ -37,6 +37,38 @@ public strictfp final class Interactor extends BasicComponentRenderable implemen
 	public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
 		
 		super.render(gameContainer, graphics);
+		
+		if (this.patientDragging == null) {
+			
+			List<Patient> patients = this.componentManager.getComponents(Patient.class);
+			
+			Input input = gameContainer.getInput();
+			
+			Vector2f v = new Vector2f(input.getMouseX(), input.getMouseY());
+			
+			Patient best = null;
+			
+			for (Patient i : patients) {
+				
+				if (best == null) {
+					
+					best = i;
+				}
+				else {
+					
+					if (v.distanceSquared(i.getPosition()) < v.distanceSquared(best.getPosition())) {
+						
+						best = i;
+					}
+				}
+			}
+		}
+	}
+	
+	@Override
+	public float getDepth() {
+		
+		return Constants.DEPTH_UI;
 	}
 
 	@Override

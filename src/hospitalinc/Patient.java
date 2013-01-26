@@ -50,13 +50,19 @@ public strictfp final class Patient extends BasicComponentRenderable {
 	
 	public void setBed(Bed bed) {
 		
+		if (bed != null) {
+			
+			this.position.set(bed.getArea().getCenterX(), bed.getArea().getCenterY());
+		}
+		
 		if (bed != this.bed) {
 			
 			this.bed = bed;
 			
-			this.bed.setPatient(this);
-			
-			this.position.set(this.bed.getArea().getCenterX(), this.bed.getArea().getCenterY());
+			if (this.bed != null) {
+				
+				this.bed.setPatient(this);
+			}
 		}
 	}
 	
