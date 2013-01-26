@@ -68,7 +68,7 @@ public strictfp final class Generator extends BasicComponentRenderable {
 		this.life = 0;
 		this.lifeTime = Constants.GENERATOR_LIFE_TIME - Constants.GENERATOR_LIFE_TIME_VARIANCE + this.random.nextInt(Constants.GENERATOR_LIFE_TIME_VARIANCE * 2);
 		
-		this.animation = new Animation(new SpriteSheet("assets/Generator.png", tw, th), duration)
+		this.animation = new Animation(new SpriteSheet("assets/Generator.png", 18, 18), 300);
 		
 		this.eventBus.post(new GeneratorCreatedEvent(this));
 	}
@@ -91,9 +91,7 @@ public strictfp final class Generator extends BasicComponentRenderable {
 		
 		super.render(gameContainer, graphics);
 		
-		graphics.setColor(Color.yellow);
-		
-		graphics.fill(this.area);
+		graphics.drawAnimation(this.animation, this.position.getX() - 1f, this.position.getY() - 1f);
 	}
 	
 	@Override
