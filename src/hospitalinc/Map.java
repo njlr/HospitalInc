@@ -57,7 +57,8 @@ public strictfp final class Map extends BasicComponentRenderable {
 					HealingBed bed = new HealingBed(
 							this.componentManager.takeId(), 
 							this.componentManager, 
-							new Vector2f(x, y));
+							new Vector2f(x, y), 
+							Boolean.parseBoolean(this.tiledMap.getObjectProperty(i, j, "Horizontal", "False")));
 					
 					this.componentManager.addComponent(bed);
 				}
@@ -66,13 +67,18 @@ public strictfp final class Map extends BasicComponentRenderable {
 					WaitingBed bed = new WaitingBed(
 							this.componentManager.takeId(), 
 							this.componentManager, 
-							new Vector2f(x, y));
+							new Vector2f(x, y), 
+							Boolean.parseBoolean(this.tiledMap.getObjectProperty(i, j, "Horizontal", "False")));
 					
 					this.componentManager.addComponent(bed);
 				}
 				else if (type.equalsIgnoreCase("BedSite")) {
 					
-					BedSite bedSite = new BedSite(this.componentManager.takeId(), this.componentManager, new Vector2f(x, y));
+					BedSite bedSite = new BedSite(
+							this.componentManager.takeId(), 
+							this.componentManager, 
+							new Vector2f(x, y), 
+							Boolean.parseBoolean(this.tiledMap.getObjectProperty(i, j, "Horizontal", "False")));
 					
 					this.componentManager.addComponent(bedSite);
 				}

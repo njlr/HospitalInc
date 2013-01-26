@@ -50,9 +50,14 @@ public strictfp final class Patient extends BasicComponentRenderable {
 	
 	public void setBed(Bed bed) {
 		
-		this.bed = bed;
-		
-		this.position.set(this.bed.getArea().getCenterX(), this.bed.getArea().getCenterY());
+		if (bed != this.bed) {
+			
+			this.bed = bed;
+			
+			this.bed.setPatient(this);
+			
+			this.position.set(this.bed.getArea().getCenterX(), this.bed.getArea().getCenterY());
+		}
 	}
 	
 	public Patient(long id, EventBus eventBus, PatientInfo patientInfo, Bed bed) {
@@ -216,10 +221,5 @@ public strictfp final class Patient extends BasicComponentRenderable {
 		super.destroy(gameContainer);
 		
 		this.eventBus.unregister(this);
-	}
-	
-	public void assignBed(Bed bed) {
-		
-		this.bed = bed;
 	}
 }
