@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="Background" tilewidth="16" tileheight="16">
+  <image source="gfx/Background.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="2" name="Tile01" tilewidth="16" tileheight="16">
+  <image source="gfx/Tile01.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="3" name="Wall01" tilewidth="16" tileheight="16">
+  <image source="gfx/Wall01.png" width="16" height="48"/>
+ </tileset>
+ <tileset firstgid="6" name="Tile02" tilewidth="16" tileheight="16">
+  <image source="gfx/Tile02.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="7" name="Wall" tilewidth="16" tileheight="16">
+  <image source="gfx/Wall.png" width="48" height="16"/>
+ </tileset>
+ <layer name="Background" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDoat/07OxBySsmqqqqqo+fSGSD83AEgAA
+  </data>
+ </layer>
+ <layer name="Floor" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DwQkAAAwDoSP7D901+lBw1VRVVVX16QN4AlxbwBIAAA==
+  </data>
+ </layer>
+ <layer name="Wall" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3OOQoAIRAAQcHz/y/e/YCBgwwGVdB5lwIAwM78W4dlqoEytUCZeqBMI5A/f/7e+APu+gDZ1nRswBIAAA==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="40" height="30">
+  <object name="GeneratorSite00" type="GeneratorSite" x="64" y="160" width="16" height="16"/>
+  <object name="Bed00" type="Bed" x="80" y="160" width="32" height="64"/>
+  <object name="Bed00" type="Bed" x="128" y="160" width="32" height="64"/>
+  <object name="GeneratorSite00" type="GeneratorSite" x="240" y="160" width="16" height="16"/>
+  <object name="GeneratorSite00" type="GeneratorSite" x="160" y="272" width="16" height="16"/>
+  <object name="GeneratorSite00" type="GeneratorSite" x="240" y="272" width="16" height="16"/>
+  <object name="GeneratorSite00" type="GeneratorSite" x="64" y="272" width="16" height="16"/>
+  <object name="Bed00" type="Bed" x="304" y="32" width="32" height="64">
+   <properties>
+    <property name="Waiting" value="True"/>
+   </properties>
+  </object>
+  <object name="Bed00" type="Bed" x="64" y="32" width="32" height="64">
+   <properties>
+    <property name="Waiting" value="True"/>
+   </properties>
+  </object>
+  <object name="Bed00" type="Bed" x="256" y="32" width="32" height="64">
+   <properties>
+    <property name="Waiting" value="True"/>
+   </properties>
+  </object>
+  <object name="Bed00" type="Bed" x="160" y="32" width="32" height="64">
+   <properties>
+    <property name="Waiting" value="True"/>
+   </properties>
+  </object>
+  <object name="Bed00" type="Bed" x="208" y="32" width="32" height="64">
+   <properties>
+    <property name="Waiting" value="True"/>
+   </properties>
+  </object>
+  <object name="Bed00" type="Bed" x="112" y="32" width="32" height="64">
+   <properties>
+    <property name="Waiting" value="True"/>
+   </properties>
+  </object>
+  <object name="GeneratorSite00" type="GeneratorSite" x="160" y="160" width="16" height="16"/>
+  <object type="BedSite" x="208" y="160" width="32" height="64"/>
+  <object type="BedSite" x="80" y="272" width="32" height="64"/>
+  <object type="BedSite" x="128" y="272" width="32" height="64"/>
+  <object type="BedSite" x="208" y="272" width="32" height="64"/>
+ </objectgroup>
+</map>
