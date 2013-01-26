@@ -4,10 +4,12 @@ import hospitalinc.events.GeneratorDestroyedEvent;
 import nlib.components.BasicComponentRenderable;
 import nlib.components.ComponentManager;
 
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
@@ -24,6 +26,9 @@ public strictfp final class GeneratorSite extends BasicComponentRenderable imple
 	private Generator generator;
 	
 	private boolean isHover;
+	
+	private Animation animation;
+	private Animation animationGenerator;
 	
 	public Vector2f getPosition() {
 		
@@ -77,6 +82,10 @@ public strictfp final class GeneratorSite extends BasicComponentRenderable imple
 		this.generator = null;
 		
 		this.isHover = false;
+		
+		this.animation = new Animation(new SpriteSheet("assets/gfx/GeneratorSite.png", 16, 16), 30);
+		
+		this.animationGenerator = new Animation(new SpriteSheet("assets/gfx/Generator.png", 16, 16), 30);
 	}
 	
 	@Override
@@ -84,16 +93,14 @@ public strictfp final class GeneratorSite extends BasicComponentRenderable imple
 		
 		super.render(gameContainer, graphics);
 		
+		graphics.drawAnimation(this.animation, this.position.getX(), this.position.getY());
+		
 		if (this.isHover) {
 			
-			graphics.setColor(Color.magenta);
-		}
-		else {
+			final Color color = new Color(255, 255, 255, 80);
 			
-			graphics.setColor(Color.gray);
+			graphics.drawAnimation(this.animationGenerator, this.position.getX() - 1f, this.position.getY() - 1f, color);
 		}
-		
-		graphics.fill(this.area);
 	}
 	
 	@Override

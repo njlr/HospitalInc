@@ -68,7 +68,7 @@ public strictfp final class Generator extends BasicComponentRenderable {
 		this.life = 0;
 		this.lifeTime = Constants.GENERATOR_LIFE_TIME - Constants.GENERATOR_LIFE_TIME_VARIANCE + this.random.nextInt(Constants.GENERATOR_LIFE_TIME_VARIANCE * 2);
 		
-		this.animation = new Animation(new SpriteSheet("assets/Generator.png", 18, 18), 300);
+		this.animation = new Animation(new SpriteSheet("assets/gfx/Generator.png", 18, 18), 30);
 		
 		this.eventBus.post(new GeneratorCreatedEvent(this));
 	}
