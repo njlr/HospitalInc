@@ -99,16 +99,14 @@ public strictfp final class BedSite extends BasicComponentRenderable implements 
 		
 		super.render(gameContainer, graphics);
 		
-		if (this.isHover) {
-			
-			graphics.setColor(Color.magenta);
-		}
-		else {
-			
-			graphics.setColor(Color.gray);
-		}
+		graphics.setColor(Color.gray);
 		
 		graphics.fill(this.area);
+		
+		if (this.isHover) {
+			
+			graphics.drawAnimation(this.animationBed, this.position.getX(), this.position.getY(), Constants.COLOR_GHOST);
+		}
 	}
 	
 	@Override

@@ -1,5 +1,7 @@
 package hospitalinc;
 
+import org.newdawn.slick.Color;
+
 public strictfp final class Constants {
 	
 	private Constants() {
@@ -34,4 +36,6 @@ public strictfp final class Constants {
 	public static final int MAX_FATALITY_COUNT = 2;
 	
 	public static final float SCROLL_SPEED = 0.01f;
+
+	public static final Color COLOR_GHOST = new Color(255, 255, 255, 160);
 }

@@ -5,7 +5,6 @@ import nlib.components.BasicComponentRenderable;
 import nlib.components.ComponentManager;
 
 import org.newdawn.slick.Animation;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -97,9 +96,7 @@ public strictfp final class GeneratorSite extends BasicComponentRenderable imple
 		
 		if (this.isHover) {
 			
-			final Color color = new Color(255, 255, 255, 160);
-			
-			graphics.drawAnimation(this.animationGenerator, this.position.getX() - 1f, this.position.getY() - 1f, color);
+			graphics.drawAnimation(this.animationGenerator, this.position.getX() - 1f, this.position.getY() - 1f, Constants.COLOR_GHOST);
 		}
 	}
 	
