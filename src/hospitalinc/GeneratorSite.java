@@ -85,7 +85,7 @@ public strictfp final class GeneratorSite extends BasicComponentRenderable imple
 		
 		this.animation = new Animation(new SpriteSheet("assets/gfx/GeneratorSite.png", 16, 16), 30);
 		
-		this.animationGenerator = new Animation(new SpriteSheet("assets/gfx/Generator.png", 16, 16), 30);
+		this.animationGenerator = new Animation(new SpriteSheet("assets/gfx/Generator.png", 18, 18), 30);
 	}
 	
 	@Override
@@ -97,7 +97,7 @@ public strictfp final class GeneratorSite extends BasicComponentRenderable imple
 		
 		if (this.isHover) {
 			
-			final Color color = new Color(255, 255, 255, 80);
+			final Color color = new Color(255, 255, 255, 160);
 			
 			graphics.drawAnimation(this.animationGenerator, this.position.getX() - 1f, this.position.getY() - 1f, color);
 		}

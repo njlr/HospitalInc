@@ -8,10 +8,12 @@ import hospitalinc.events.GeneratorDestroyedEvent;
 import hospitalinc.events.PatientDiedEvent;
 import hospitalinc.events.PatientHealedEvent;
 
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
@@ -32,6 +34,8 @@ public strictfp final class Bed extends BasicComponentRenderable {
 	private Patient patient;
 	
 	private boolean waiting;
+	
+	private Animation animation;
 	
 	public Vector2f getPosition() {
 		
@@ -91,6 +95,8 @@ public strictfp final class Bed extends BasicComponentRenderable {
 		
 		this.patient = null;
 		
+		this.animation = new Animation(new SpriteSheet("assets/gfx/Bed.png", 32, 48), 30);
+		
 		this.generators.clear();
 		
 		for (Generator i : this.componentManager.getComponents(Generator.class)) {
@@ -110,13 +116,11 @@ public strictfp final class Bed extends BasicComponentRenderable {
 		if (this.isReceivingPower()) {
 			
 			graphics.setColor(Color.yellow);
-		}
-		else {
 			
-			graphics.setColor(Color.gray);
+			graphics.draw(this.area);
 		}
 		
-		graphics.draw(this.area);
+		graphics.drawAnimation(this.animation, this.position.getX(), this.position.getY());
 	}
 	
 	@Override

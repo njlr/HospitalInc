@@ -48,8 +48,6 @@ public strictfp final class GameStateGameOver extends BasicGameState {
 	@Override
 	public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics graphics) throws SlickException {
 		
-		System.out.println(this.scrollY);
-		
 		graphics.setColor(Color.white);
 		
 		float x = 32f;
