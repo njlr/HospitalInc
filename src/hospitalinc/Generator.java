@@ -1,12 +1,13 @@
 package hospitalinc;
 
-import java.util.Random;
-
 import hospitalinc.events.GeneratorCreatedEvent;
 import hospitalinc.events.GeneratorDestroyedEvent;
 
+import java.util.Random;
+
+import nlib.components.BasicComponentRenderable;
+
 import org.newdawn.slick.Animation;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -15,8 +16,6 @@ import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
 import com.google.common.eventbus.EventBus;
-
-import nlib.components.BasicComponentRenderable;
 
 public strictfp final class Generator extends BasicComponentRenderable {
 	

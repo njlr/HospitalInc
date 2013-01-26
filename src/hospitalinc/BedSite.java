@@ -103,7 +103,7 @@ public strictfp final class BedSite extends BasicComponentRenderable implements 
 		
 		this.isSelectable = false;
 		
-		Bed bed = new Bed(this.componentManager.takeId(), this.componentManager, this.position, false);
+		HealingBed bed = new HealingBed(this.componentManager.takeId(), this.componentManager, this.position);
 		
 		this.componentManager.addComponent(bed);
 	}

@@ -112,7 +112,7 @@ public strictfp final class Patient extends BasicComponentRenderable {
 		
 		super.update(gameContainer, delta);
 		
-		if (this.bed.isReceivingPower()) {
+		if (this.bed.isHealing()) {
 			
 			if (this.health < Constants.PATIENT_HEALTH) {
 				

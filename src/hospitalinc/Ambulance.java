@@ -64,7 +64,7 @@ public strictfp final class Ambulance extends BasicComponent {
 	
 	private void sendNextPatient() {
 		
-		Bed bed = this.getAvailableBed();
+		WaitingBed bed = this.getAvailableBed();
 		
 		if (bed == null) {
 			
@@ -82,13 +82,13 @@ public strictfp final class Ambulance extends BasicComponent {
 		}
 	}
 	
-	private Bed getAvailableBed() {
+	private WaitingBed getAvailableBed() {
 		
-		List<Bed> beds = this.componentManager.getComponents(Bed.class);
+		List<WaitingBed> beds = this.componentManager.getComponents(WaitingBed.class);
 		
-		Bed availableBed = null;
+		WaitingBed availableBed = null;
 		
-		for (Bed bed : beds) {
+		for (WaitingBed bed : beds) {
 			
 			if (bed.isAvailable()) {
 				
@@ -98,30 +98,10 @@ public strictfp final class Ambulance extends BasicComponent {
 				}
 				else {
 					
-					if (availableBed.isWaiting()) {
+					if ((bed.getPosition().getX() < availableBed.getPosition().getX()) && 
+							(bed.getPosition().getY() <= availableBed.getPosition().getY())) {
 						
-						if (bed.isWaiting()) {
-							
-							if ((bed.getPosition().getX() < availableBed.getPosition().getX()) && 
-									(bed.getPosition().getY() <= availableBed.getPosition().getY())) {
-								
-								availableBed = bed;
-							}
-						}
-					}
-					else {
-						
-						if (bed.isWaiting()) {
-							
-							availableBed = bed;
-						}
-						else {
-							
-							if ((bed.isReceivingPower()) && (!availableBed.isReceivingPower())) {
-								
-								availableBed = bed;
-							}
-						}
+						availableBed = bed;
 					}
 				}
 			}
